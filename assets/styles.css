@@ -1,0 +1,67 @@
+.parent {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+}
+
+.mapImg1 {
+    grid-area: 1 / 1 / 2 / 2;
+}
+
+.mapImg2 {
+    grid-area: 1 / 1 / 2 / 2;
+}
+
+.mapImg3 {
+    grid-area: 1 / 1 / 2 / 2;
+}
+
+.mapImg4 {
+    grid-area: 1 / 1 / 2 / 2;
+}
+
+.mapImg5 {
+    grid-area: 1 / 1 / 2 / 2;
+}
+
+.mapImg6 {
+    grid-area: 1 / 1 / 2 / 2;
+}
+
+.mapImg7 {
+    grid-area: 1 / 1 / 2 / 2;
+}
+
+.mapImg8 {
+    grid-area: 1 / 1 / 2 / 2;
+}
+
+.mapImg9 {
+    grid-area: 1 / 1 / 2 / 2;
+}
+
+.mapImg10 {
+    grid-area: 1 / 1 / 2 / 2;
+}
+
+.mapImg11 {
+    grid-area: 1 / 1 / 2 / 2;
+}
+
+.mapImg12 {
+    grid-area: 1 / 1 / 2 / 2;
+}
+
+.mapImg13 {
+    grid-area: 1 / 1 / 2 / 2;
+}
+
+.mapImg14 {
+    grid-area: 1 / 1 / 2 / 2;
+}
+
+.mapImg15 {
+    grid-area: 1 / 1 / 2 / 2;
+}
