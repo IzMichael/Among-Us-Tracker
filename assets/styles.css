@@ -82,23 +82,22 @@ li {}
 /* width */
 ::-webkit-scrollbar {
     width: 2px;
-    border-radius: 0.5rem;
+    border-radius: 2rem;
 }
 
 /* Track */
 ::-webkit-scrollbar-track {
-    background: #adadad00;
+    display: none;
     border-radius: 0.5rem;
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
     background: #888;
-    border-radius: 0.5rem;
+    border-radius: 2rem;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
     background: #555;
-    border-radius: 0.5rem;
 }
