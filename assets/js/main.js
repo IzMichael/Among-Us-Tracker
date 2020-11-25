@@ -145,3 +145,4 @@ Sortable.create(foo, options);
 Sortable.create(bar, options);
 Sortable.create(erm, options);
 Sortable.create(shm, options);
+Sortable.create(shw, options);
