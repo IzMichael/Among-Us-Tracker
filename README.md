@@ -1,2 +1,2 @@
-# Sus Tracker
-Sus Tracker is an interactive Among Us tracker for tracking sus levels, vents, and task locations.
+# Among Us Tracker
+Among Us Tracker is an interactive Among Us tracker for tracking suspicion levels, vents, and task locations.

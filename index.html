@@ -1,253 +1,159 @@
 <head>
-    <title>Sus Tracker</title>
+    <title>Among Us Tracker</title>
     <link rel="stylesheet" href="https://resources.izmichael.xyz/assets/tailwind2.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <link rel="stylesheet" href="/assets/styles.css">
-    <script src="/assets/js/sus.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
 </head>
 
 <body class="text-white bg-gray-900" onload="mapSelect('skeld')">
     <noscript>
         <h1 class="text-4xl">Please enable Javascript to use this site.</h1>
     </noscript>
-    <div class="grid w-screen h-screen grid-cols-2 grid-rows-2 p-5">
-        <div class="grid w-full h-full grid-cols-2 grid-rows-2 p-5" id="susDisplay">
-            <div class="grid w-full h-full grid-cols-2" id="dispInnocent">
-
+    <div class="grid w-screen h-screen grid-cols-1 grid-rows-2 p-5 lg:grid-cols-2">
+        <div class="flex flex-col w-full h-full row-span-2 gap-5 p-5" id="susControl">
+            <div class="flex flex-row gap-5">
+                <div class="flex-1 p-2 border-2 border-gray-500 rounded-md">
+                    <h2 class="mb-2 text-xl text-center mx-auto">Innocent</h2>
+                    <ul class="flex flex-col gap-y-3" id="foo"></ul>
+                </div>
+                <div class="flex-1 p-2 border-2 border-gray-500 rounded-md">
+                    <h2 class="mb-2 text-xl text-center mx-auto">Suspicious</h2>
+                    <ul class="flex flex-col gap-y-3" id="bar"></ul>
+                </div>
+                <div class="flex-1 p-2 border-2 border-gray-500 rounded-md">
+                    <h2 class="mb-2 text-xl text-center mx-auto">Dead</h2>
+                    <ul class="flex flex-col gap-y-3" id="erm"></ul>
+                </div>
             </div>
-            <div class="grid w-full h-full grid-cols-2" id="dispSus">
-
+            <div class="flex-1 p-2 border-2 border-gray-500 rounded-md">
+                <h2 class="mb-2 text-xl text-center mx-auto">Unknown</h2>
+                <ul class="grid grid-rows-4 grid-cols-3 gap-x-3" id="shm">
+                    <li
+                        class="flex flex-row select-none items-center justify-center h-16 overflow-hidden border border-gray-700 rounded-lg">
+                        <img class="w-11 h-11" src="/assets/img/players/Red.png">
+                        <input class="w-24 p-2 bg-gray-700 rounded-lg" placeholder="Red" style="outline: none;">
+                    </li>
+                    <li
+                        class="flex flex-row select-none items-center justify-center h-16 overflow-hidden border border-gray-700 rounded-lg">
+                        <img class="w-11 h-11" src="/assets/img/players/Blue.png">
+                        <input class="w-24 p-2 bg-gray-700 rounded-lg" placeholder="Blue" style="outline: none;">
+                    </li>
+                    <li
+                        class="flex flex-row select-none items-center justify-center h-16 overflow-hidden border border-gray-700 rounded-lg">
+                        <img class="w-11 h-11" src="/assets/img/players/Green.png">
+                        <input class="w-24 p-2 bg-gray-700 rounded-lg" placeholder="Green" style="outline: none;">
+                    </li>
+                    <li
+                        class="flex flex-row select-none items-center justify-center h-16 overflow-hidden border border-gray-700 rounded-lg">
+                        <img class="w-11 h-11" src="/assets/img/players/Pink.png">
+                        <input class="w-24 p-2 bg-gray-700 rounded-lg" placeholder="Pink" style="outline: none;">
+                    </li>
+                    <li
+                        class="flex flex-row select-none items-center justify-center h-16 overflow-hidden border border-gray-700 rounded-lg">
+                        <img class="w-11 h-11" src="/assets/img/players/Orange.png">
+                        <input class="w-24 p-2 bg-gray-700 rounded-lg" placeholder="Orange" style="outline: none;">
+                    </li>
+                    <li
+                        class="flex flex-row select-none items-center justify-center h-16 overflow-hidden border border-gray-700 rounded-lg">
+                        <img class="w-11 h-11" src="/assets/img/players/Yellow.png">
+                        <input class="w-24 p-2 bg-gray-700 rounded-lg" placeholder="Yellow" style="outline: none;">
+                    </li>
+                    <li
+                        class="flex flex-row select-none items-center justify-center h-16 overflow-hidden border border-gray-700 rounded-lg">
+                        <img class="w-11 h-11" src="/assets/img/players/Black.png">
+                        <input class="w-24 p-2 bg-gray-700 rounded-lg" placeholder="Black" style="outline: none;">
+                    </li>
+                    <li
+                        class="flex flex-row select-none items-center justify-center h-16 overflow-hidden border border-gray-700 rounded-lg">
+                        <img class="w-11 h-11" src="/assets/img/players/White.png">
+                        <input class="w-24 p-2 bg-gray-700 rounded-lg" placeholder="White" style="outline: none;">
+                    </li>
+                    <li
+                        class="flex flex-row select-none items-center justify-center h-16 overflow-hidden border border-gray-700 rounded-lg">
+                        <img class="w-11 h-11" src="/assets/img/players/Purple.png">
+                        <input class="w-24 p-2 bg-gray-700 rounded-lg" placeholder="Purple" style="outline: none;">
+                    </li>
+                    <li
+                        class="flex flex-row select-none items-center justify-center h-16 overflow-hidden border border-gray-700 rounded-lg">
+                        <img class="w-11 h-11" src="/assets/img/players/Brown.png">
+                        <input class="w-24 p-2 bg-gray-700 rounded-lg" placeholder="Brown" style="outline: none;">
+                    </li>
+                    <li
+                        class="flex flex-row select-none items-center justify-center h-16 overflow-hidden border border-gray-700 rounded-lg">
+                        <img class="w-11 h-11" src="/assets/img/players/Cyan.png">
+                        <input class="w-24 p-2 bg-gray-700 rounded-lg" placeholder="Cyan" style="outline: none;">
+                    </li>
+                    <li
+                        class="flex flex-row select-none items-center justify-center h-16 overflow-hidden border border-gray-700 rounded-lg">
+                        <img class="w-11 h-11" src="/assets/img/players/Lime.png">
+                        <input class="w-24 p-2 bg-gray-700 rounded-lg" placeholder="Lime" style="outline: none;">
+                    </li>
+                </ul>
             </div>
-            <div class="grid w-full h-full grid-cols-2" id="dispDead">
-
+            <div
+                class="flex flex-row items-center justify-center h-16 col-span-2 p-2 border-2 border-gray-500 rounded-md">
+                <button class="bg-gray-700 px-5 py-2 rounded-lg focus:border-4 focus:border-gray-100" onclick="window.location.href = '/';" style="outline: none;">Reset Sus-O-Meter</button>
+                <button class="bg-gray-700 px-5 py-2 rounded-lg ml-5 focus:border-4 focus:border-gray-100" onclick="clearNotes()" style="outline: none;">Clear Notes</button>
             </div>
-            <div class="grid w-full h-full grid-cols-2" id="dispUnknown">
-
+            <div
+                class="flex flex-row items-center justify-center h-16 col-span-2 p-2 border-2 border-gray-500 rounded-md">
+                <a class="text-lg" href="https://izmichael.xyz">&copy; IzMichael 2020</a>
+                <p class="select-none">&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;</p>
+                <a class="text-lg" href="https://twitter.com/SamuraiPipotchi">Map by @SamuraiPipotchi</a>
+                <p class="select-none">&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;</p>
+                <a class="text-lg" href="https://github.com/IzMichael/Sus-Tracker/issues/new">Problems?</a>
+                <p class="select-none">&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;</p>
+                <a class="text-lg" href="/help">HOW TO USE</a>
             </div>
         </div>
         <div class="flex flex-col justify-center w-full h-full p-5" id="mapDisplay">
             <div class="parent">
-                <div class="w-full h-full mapImg1 skeld"><img src="/assets/img/maps/blank/skeld.png"></div>
-                <div class="w-full h-full mapImg2 skeld skeld-vent">1b</div>
-                <div class="w-full h-full mapImg3 skeld skeld-wires">1c</div>
-                <div class="w-full h-full mapImg4 skeld skeld-common">1d</div>
-                <div class="w-full h-full mapImg5 skeld skeld-cams">1e</div>
-                <div class="w-full h-full mapImg6 mira"><img src="/assets/img/maps/blank/mira.png"></div>
-                <div class="w-full h-full mapImg7 mira mira-vent">2b</div>
-                <div class="w-full h-full mapImg8 mira mira-wires">2c</div>
-                <div class="w-full h-full mapImg9 mira mira-common">2d</div>
-                <div class="w-full h-full mapImg10 mira mira-cams">2e</div>
-                <div class="w-full h-full mapImg11 polus"><img src="/assets/img/maps/blank/polus.png"></div>
-                <div class="w-full h-full mapImg12 polus polus-vent">3b</div>
-                <div class="w-full h-full mapImg13 polus polus-wires">3c</div>
-                <div class="w-full h-full mapImg14 polus polus-common">3d</div>
-                <div class="w-full h-full mapImg15 polus polus-cams">3e</div>
+                <!-- Skeld Images -->
+                <div class="w-full h-full mapImg1 skeld"><img src="/assets/img/maps/skeld/blank.png"></div>
+                <div class="w-full h-full mapImg2 skeld skeld-vent"><img src="/assets/img/maps/skeld/vents.png"></div>
+                <div class="w-full h-full mapImg3 skeld skeld-label"><img src="/assets/img/maps/skeld/label.png"></div>
+                <div class="w-full h-full mapImg4 skeld skeld-common"><img src="/assets/img/maps/skeld/common.png">
+                </div>
+                <div class="w-full h-full mapImg5 skeld skeld-cams"><img src="/assets/img/maps/skeld/cams.png"></div>
+                <!-- Mira Images -->
+                <div class="w-full h-full mapImg1 mira"><img src="/assets/img/maps/mira/blank.png"></div>
+                <div class="w-full h-full mapImg2 mira mira-vent"><img src="/assets/img/maps/mira/vents.png"></div>
+                <div class="w-full h-full mapImg3 mira mira-label"><img src="/assets/img/maps/mira/label.png"></div>
+                <div class="w-full h-full mapImg4 mira mira-common"><img src="/assets/img/maps/mira/common.png"></div>
+                <div class="w-full h-full mapImg5 mira mira-cams"><img src="/assets/img/maps/mira/cams.png"></div>
+                <!-- Polus Images -->
+                <div class="w-full h-full mapImg1 polus"><img src="/assets/img/maps/polus/blank.png"></div>
+                <div class="w-full h-full mapImg2 polus polus-vent"><img src="/assets/img/maps/polus/vents.png"></div>
+                <div class="w-full h-full mapImg3 polus polus-label"><img src="/assets/img/maps/polus/label.png"></div>
+                <div class="w-full h-full mapImg4 polus polus-common"><img src="/assets/img/maps/polus/common.png">
+                </div>
+                <div class="w-full h-full mapImg5 polus polus-cams"><img src="/assets/img/maps/polus/cams.png"></div>
             </div>
         </div>
-        <div class="grid w-full h-full grid-cols-3 gap-2 p-5" id="susControl">
-            <player class="flex flex-row items-center justify-center border-2 border-gray-500 rounded-lg">
-                <div class="flex flex-col justify-center mr-3">
-                    <button style="outline: none;" class="bg-gray-700 p-1 rounded-lg"
-                        onclick="markPlayer('red', 'inno')">Innocent</button>
-                    <button style="outline: none;" class="bg-gray-700 p-1 mt-2 rounded-lg"
-                        onclick="markPlayer('red', 'dead')">Dead</button>
-                </div>
-                <img class="w-11 h-11" src="/assets/img/players/red.png">
-                <div class="flex flex-col justify-center ml-3">
-                    <button style="outline: none;" class="bg-gray-700 p-1 rounded-lg"
-                        onclick="markPlayer('red', 'sus')">Suspicious</button>
-                    <button style="outline: none;" class="bg-gray-700 p-1 mt-2 rounded-lg"
-                        onclick="markPlayer('red', 'none')">Unknown</button>
-                </div>
-            </player>
-            <player class="flex flex-row items-center justify-center border-2 border-gray-500 rounded-lg">
-                <div class="flex flex-col justify-center mr-3">
-                    <button style="outline: none;" class="bg-gray-700 p-1 rounded-lg"
-                        onclick="markPlayer('blue', 'inno')">Innocent</button>
-                    <button style="outline: none;" class="bg-gray-700 p-1 mt-2 rounded-lg"
-                        onclick="markPlayer('blue', 'dead')">Dead</button>
-                </div>
-                <img class="w-11 h-11" src="/assets/img/players/blue.png">
-                <div class="flex flex-col justify-center ml-3">
-                    <button style="outline: none;" class="bg-gray-700 p-1 rounded-lg"
-                        onclick="markPlayer('blue', 'sus')">Suspicious</button>
-                    <button style="outline: none;" class="bg-gray-700 p-1 mt-2 rounded-lg"
-                        onclick="markPlayer('blue', 'none')">Unknown</button>
-                </div>
-            </player>
-            <player class="flex flex-row items-center justify-center border-2 border-gray-500 rounded-lg">
-                <div class="flex flex-col justify-center mr-3">
-                    <button style="outline: none;" class="bg-gray-700 p-1 rounded-lg"
-                        onclick="markPlayer('green', 'inno')">Innocent</button>
-                    <button style="outline: none;" class="bg-gray-700 p-1 mt-2 rounded-lg"
-                        onclick="markPlayer('green', 'dead')">Dead</button>
-                </div>
-                <img class="w-11 h-11" src="/assets/img/players/green.png">
-                <div class="flex flex-col justify-center ml-3">
-                    <button style="outline: none;" class="bg-gray-700 p-1 rounded-lg"
-                        onclick="markPlayer('green', 'sus')">Suspicious</button>
-                    <button style="outline: none;" class="bg-gray-700 p-1 mt-2 rounded-lg"
-                        onclick="markPlayer('green', 'none')">Unknown</button>
-                </div>
-            </player>
-            <player class="flex flex-row items-center justify-center border-2 border-gray-500 rounded-lg">
-                <div class="flex flex-col justify-center mr-3">
-                    <button style="outline: none;" class="bg-gray-700 p-1 rounded-lg"
-                        onclick="markPlayer('pink', 'inno')">Innocent</button>
-                    <button style="outline: none;" class="bg-gray-700 p-1 mt-2 rounded-lg"
-                        onclick="markPlayer('pink', 'dead')">Dead</button>
-                </div>
-                <img class="w-11 h-11" src="/assets/img/players/pink.png">
-                <div class="flex flex-col justify-center ml-3">
-                    <button style="outline: none;" class="bg-gray-700 p-1 rounded-lg"
-                        onclick="markPlayer('pink', 'sus')">Suspicious</button>
-                    <button style="outline: none;" class="bg-gray-700 p-1 mt-2 rounded-lg"
-                        onclick="markPlayer('pink', 'none')">Unknown</button>
-                </div>
-            </player>
-            <player class="flex flex-row items-center justify-center border-2 border-gray-500 rounded-lg">
-                <div class="flex flex-col justify-center mr-3">
-                    <button style="outline: none;" class="bg-gray-700 p-1 rounded-lg"
-                        onclick="markPlayer('orange', 'inno')">Innocent</button>
-                    <button style="outline: none;" class="bg-gray-700 p-1 mt-2 rounded-lg"
-                        onclick="markPlayer('orange', 'dead')">Dead</button>
-                </div>
-                <img class="w-11 h-11" src="/assets/img/players/orange.png">
-                <div class="flex flex-col justify-center ml-3">
-                    <button style="outline: none;" class="bg-gray-700 p-1 rounded-lg"
-                        onclick="markPlayer('orange', 'sus')">Suspicious</button>
-                    <button style="outline: none;" class="bg-gray-700 p-1 mt-2 rounded-lg"
-                        onclick="markPlayer('orange', 'none')">Unknown</button>
-                </div>
-            </player>
-            <player class="flex flex-row items-center justify-center border-2 border-gray-500 rounded-lg">
-                <div class="flex flex-col justify-center mr-3">
-                    <button style="outline: none;" class="bg-gray-700 p-1 rounded-lg"
-                        onclick="markPlayer('yellow', 'inno')">Innocent</button>
-                    <button style="outline: none;" class="bg-gray-700 p-1 mt-2 rounded-lg"
-                        onclick="markPlayer('yellow', 'dead')">Dead</button>
-                </div>
-                <img class="w-11 h-11" src="/assets/img/players/yellow.png">
-                <div class="flex flex-col justify-center ml-3">
-                    <button style="outline: none;" class="bg-gray-700 p-1 rounded-lg"
-                        onclick="markPlayer('yellow', 'sus')">Suspicious</button>
-                    <button style="outline: none;" class="bg-gray-700 p-1 mt-2 rounded-lg"
-                        onclick="markPlayer('yellow', 'none')">Unknown</button>
-                </div>
-            </player>
-            <player class="flex flex-row items-center justify-center border-2 border-gray-500 rounded-lg">
-                <div class="flex flex-col justify-center mr-3">
-                    <button style="outline: none;" class="bg-gray-700 p-1 rounded-lg"
-                        onclick="markPlayer('black', 'inno')">Innocent</button>
-                    <button style="outline: none;" class="bg-gray-700 p-1 mt-2 rounded-lg"
-                        onclick="markPlayer('black', 'dead')">Dead</button>
-                </div>
-                <img class="w-11 h-11" src="/assets/img/players/black.png">
-                <div class="flex flex-col justify-center ml-3">
-                    <button style="outline: none;" class="bg-gray-700 p-1 rounded-lg"
-                        onclick="markPlayer('black', 'sus')">Suspicious</button>
-                    <button style="outline: none;" class="bg-gray-700 p-1 mt-2 rounded-lg"
-                        onclick="markPlayer('black', 'none')">Unknown</button>
-                </div>
-            </player>
-            <player class="flex flex-row items-center justify-center border-2 border-gray-500 rounded-lg">
-                <div class="flex flex-col justify-center mr-3">
-                    <button style="outline: none;" class="bg-gray-700 p-1 rounded-lg"
-                        onclick="markPlayer('white', 'inno')">Innocent</button>
-                    <button style="outline: none;" class="bg-gray-700 p-1 mt-2 rounded-lg"
-                        onclick="markPlayer('white', 'dead')">Dead</button>
-                </div>
-                <img class="w-11 h-11" src="/assets/img/players/white.png">
-                <div class="flex flex-col justify-center ml-3">
-                    <button style="outline: none;" class="bg-gray-700 p-1 rounded-lg"
-                        onclick="markPlayer('white', 'sus')">Suspicious</button>
-                    <button style="outline: none;" class="bg-gray-700 p-1 mt-2 rounded-lg"
-                        onclick="markPlayer('white', 'none')">Unknown</button>
-                </div>
-            </player>
-            <player class="flex flex-row items-center justify-center border-2 border-gray-500 rounded-lg">
-                <div class="flex flex-col justify-center mr-3">
-                    <button style="outline: none;" class="bg-gray-700 p-1 rounded-lg"
-                        onclick="markPlayer('purple', 'inno')">Innocent</button>
-                    <button style="outline: none;" class="bg-gray-700 p-1 mt-2 rounded-lg"
-                        onclick="markPlayer('purple', 'dead')">Dead</button>
-                </div>
-                <img class="w-11 h-11" src="/assets/img/players/purple.png">
-                <div class="flex flex-col justify-center ml-3">
-                    <button style="outline: none;" class="bg-gray-700 p-1 rounded-lg"
-                        onclick="markPlayer('purple', 'sus')">Suspicious</button>
-                    <button style="outline: none;" class="bg-gray-700 p-1 mt-2 rounded-lg"
-                        onclick="markPlayer('purple', 'none')">Unknown</button>
-                </div>
-            </player>
-            <player class="flex flex-row items-center justify-center border-2 border-gray-500 rounded-lg">
-                <div class="flex flex-col justify-center mr-3">
-                    <button style="outline: none;" class="bg-gray-700 p-1 rounded-lg"
-                        onclick="markPlayer('brown', 'inno')">Innocent</button>
-                    <button style="outline: none;" class="bg-gray-700 p-1 mt-2 rounded-lg"
-                        onclick="markPlayer('brown', 'dead')">Dead</button>
-                </div>
-                <img class="w-11 h-11" src="/assets/img/players/brown.png">
-                <div class="flex flex-col justify-center ml-3">
-                    <button style="outline: none;" class="bg-gray-700 p-1 rounded-lg"
-                        onclick="markPlayer('brown', 'sus')">Suspicious</button>
-                    <button style="outline: none;" class="bg-gray-700 p-1 mt-2 rounded-lg"
-                        onclick="markPlayer('brown', 'none')">Unknown</button>
-                </div>
-            </player>
-            <player class="flex flex-row items-center justify-center border-2 border-gray-500 rounded-lg">
-                <div class="flex flex-col justify-center mr-3">
-                    <button style="outline: none;" class="bg-gray-700 p-1 rounded-lg"
-                        onclick="markPlayer('cyan', 'inno')">Innocent</button>
-                    <button style="outline: none;" class="bg-gray-700 p-1 mt-2 rounded-lg"
-                        onclick="markPlayer('cyan', 'dead')">Dead</button>
-                </div>
-                <img class="w-11 h-11" src="/assets/img/players/cyan.png">
-                <div class="flex flex-col justify-center ml-3">
-                    <button style="outline: none;" class="bg-gray-700 p-1 rounded-lg"
-                        onclick="markPlayer('cyan', 'sus')">Suspicious</button>
-                    <button style="outline: none;" class="bg-gray-700 p-1 mt-2 rounded-lg"
-                        onclick="markPlayer('cyan', 'none')">Unknown</button>
-                </div>
-            </player>
-            <player class="flex flex-row items-center justify-center border-2 border-gray-500 rounded-lg">
-                <div class="flex flex-col justify-center mr-3">
-                    <button style="outline: none;" class="bg-gray-700 p-1 rounded-lg"
-                        onclick="markPlayer('lime', 'inno')">Innocent</button>
-                    <button style="outline: none;" class="bg-gray-700 p-1 mt-2 rounded-lg"
-                        onclick="markPlayer('lime', 'dead')">Dead</button>
-                </div>
-                <img class="w-11 h-11" src="/assets/img/players/lime.png">
-                <div class="flex flex-col justify-center ml-3">
-                    <button style="outline: none;" class="bg-gray-700 p-1 rounded-lg"
-                        onclick="markPlayer('lime', 'sus')">Suspicious</button>
-                    <button style="outline: none;" class="bg-gray-700 p-1 mt-2 rounded-lg"
-                        onclick="markPlayer('lime', 'none')">Unknown</button>
-                </div>
-            </player>
-        </div>
         <div class="flex flex-col w-full h-full p-5" id="mapControl">
-            <div class="flex flex-row w-full border-b-2 mb-4 border-gray-500">
-                <div class="flex flex-1 flex-col">
+            <div class="flex flex-row w-full mb-4 border-b-2 border-gray-500">
+                <div class="flex flex-col flex-1">
                     <h1 class="text-xl font-bold" id="mapLabel">Current: The Skeld</h1>
                     <a href="/" class="p-2 hover:bg-gray-600" onclick="mapSelect('skeld');return false">The Skeld</a>
                     <a href="/" class="p-2 hover:bg-gray-600" onclick="mapSelect('mira');return false">Mira HQ</a>
                     <a href="/" class="p-2 hover:bg-gray-600" onclick="mapSelect('polus');return false">Polus</a>
                 </div>
-                <div class="flex flex-1 flex-col">
-                    <div class="flex flex-row items-center justify-end p-2 gap-2">Vents<input type="checkbox"
+                <div class="flex flex-col flex-1">
+                    <div class="flex flex-row items-center justify-end gap-2 p-2">Vents<input type="checkbox"
                             id="ventBox" checked></div>
-                    <div class="flex flex-row items-center justify-end p-2 gap-2">Wires<input type="checkbox"
-                            id="wiresBox" checked></div>
-                    <div class="flex flex-row items-center justify-end p-2 gap-2">Common Tasks<input type="checkbox"
+                    <div class="flex flex-row items-center justify-end gap-2 p-2">Common Tasks<input type="checkbox"
                             id="commonBox" checked></div>
-                    <div class="flex flex-row items-center justify-end p-2 gap-2">Cameras<input type="checkbox"
-                            id="camsBox" checked></div>
+                    <div class="flex flex-row items-center justify-end gap-2 p-2">
+                        <p id="camsLabel">Cameras</p><input type="checkbox" id="camsBox" checked>
+                    </div>
+                    <div class="flex flex-row items-center justify-end gap-2 p-2">Guide<input type="checkbox"
+                            id="labelBox" checked></div>
                 </div>
             </div>
             <h1 class="text-lg">Notes:</h1>
-            <textarea class="p-2 mt-1 flex-1 bg-gray-700 resize-none" style="outline: none;"></textarea>
+            <textarea class="flex-1 p-2 mt-1 bg-gray-700 resize-none" style="outline: none;" id="notes"></textarea>
         </div>
     </div>
-    <script src="/assets/js/maps.js"></script>
+    <script src="/assets/js/main.js"></script>
 </body>
