@@ -3,163 +3,30 @@
     <link rel="stylesheet" href="https://resources.izmichael.xyz/assets/tailwind2.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <link rel="stylesheet" href="/assets/styles.css">
-    <script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
+    <script src="/assets/js/home.js"></script>
 </head>
 
-<body class="text-white bg-gray-900" onload="mapSelect('skeld')">
+<body class="text-white bg-gray-900">
     <noscript>
         <h1 class="text-4xl">Please enable Javascript to use this site.</h1>
     </noscript>
-    <div class="grid w-screen h-screen grid-cols-1 grid-rows-2 p-5 lg:grid-cols-2 overflow-hidden">
-        <div class="flex flex-col w-full h-full overflow-y-scroll row-span-2 gap-5 p-5" id="susControl">
-            <div class="flex flex-row gap-5">
-                <div class="flex-1 p-2 border-2 border-gray-500 rounded-md">
-                    <h2 class="mb-2 text-xl text-center mx-auto">Innocent</h2>
-                    <ul class="grid grid-cols-1 gap-y-3 h-64 overflow-y-scroll" id="foo"></ul>
-                </div>
-                <div class="flex-1 p-2 border-2 border-gray-500 rounded-md">
-                    <h2 class="mb-2 text-xl text-center mx-auto">Suspicious</h2>
-                    <ul class="grid grid-cols-1 gap-y-3 h-64 overflow-y-scroll" id="bar"></ul>
-                </div>
-                <div class="flex-1 p-2 border-2 border-gray-500 rounded-md">
-                    <h2 class="mb-2 text-xl text-center mx-auto">Dead</h2>
-                    <ul class="grid grid-cols-1 gap-y-3 h-64 overflow-y-scroll" id="erm"></ul>
-                </div>
-            </div>
-            <div class="flex-1 p-2 border-2 border-gray-500 rounded-md">
-                <h2 class="mb-2 text-xl text-center mx-auto">Unknown</h2>
-                <div class="grid grid-cols-3 gap-3 py-3 overflow-y-scroll" id="shm"></div>
-            </div>
-            <div class="flex-1 p-2 border-2 border-gray-500 rounded-md">
-                <h2 class="mb-2 text-xl text-center mx-auto">Not Playing</h2>
-                <div class="grid grid-cols-3 h-20 overflow-y-scroll gap-3 py-3" id="shw">
-                    <li
-                        class="flex flex-row select-none items-center justify-center h-12 overflow-hidden border border-gray-700 rounded-lg">
-                        <img class="w-11 h-11" src="/assets/img/players/red.png">
-                        <input class="w-24 p-2 bg-gray-700 rounded-lg" placeholder="Red" style="outline: none;">
-                    </li>
-                    <li
-                        class="flex flex-row select-none items-center justify-center h-12 overflow-hidden border border-gray-700 rounded-lg">
-                        <img class="w-11 h-11" src="/assets/img/players/blue.png">
-                        <input class="w-24 p-2 bg-gray-700 rounded-lg" placeholder="Blue" style="outline: none;">
-                    </li>
-                    <li
-                        class="flex flex-row select-none items-center justify-center h-12 overflow-hidden border border-gray-700 rounded-lg">
-                        <img class="w-11 h-11" src="/assets/img/players/green.png">
-                        <input class="w-24 p-2 bg-gray-700 rounded-lg" placeholder="Green" style="outline: none;">
-                    </li>
-                    <li
-                        class="flex flex-row select-none items-center justify-center h-12 overflow-hidden border border-gray-700 rounded-lg">
-                        <img class="w-11 h-11" src="/assets/img/players/pink.png">
-                        <input class="w-24 p-2 bg-gray-700 rounded-lg" placeholder="Pink" style="outline: none;">
-                    </li>
-                    <li
-                        class="flex flex-row select-none items-center justify-center h-12 overflow-hidden border border-gray-700 rounded-lg">
-                        <img class="w-11 h-11" src="/assets/img/players/orange.png">
-                        <input class="w-24 p-2 bg-gray-700 rounded-lg" placeholder="Orange" style="outline: none;">
-                    </li>
-                    <li
-                        class="flex flex-row select-none items-center justify-center h-12 overflow-hidden border border-gray-700 rounded-lg">
-                        <img class="w-11 h-11" src="/assets/img/players/yellow.png">
-                        <input class="w-24 p-2 bg-gray-700 rounded-lg" placeholder="Yellow" style="outline: none;">
-                    </li>
-                    <li
-                        class="flex flex-row select-none items-center justify-center h-12 overflow-hidden border border-gray-700 rounded-lg">
-                        <img class="w-11 h-11" src="/assets/img/players/black.png">
-                        <input class="w-24 p-2 bg-gray-700 rounded-lg" placeholder="Black" style="outline: none;">
-                    </li>
-                    <li
-                        class="flex flex-row select-none items-center justify-center h-12 overflow-hidden border border-gray-700 rounded-lg">
-                        <img class="w-11 h-11" src="/assets/img/players/white.png">
-                        <input class="w-24 p-2 bg-gray-700 rounded-lg" placeholder="White" style="outline: none;">
-                    </li>
-                    <li
-                        class="flex flex-row select-none items-center justify-center h-12 overflow-hidden border border-gray-700 rounded-lg">
-                        <img class="w-11 h-11" src="/assets/img/players/purple.png">
-                        <input class="w-24 p-2 bg-gray-700 rounded-lg" placeholder="Purple" style="outline: none;">
-                    </li>
-                    <li
-                        class="flex flex-row select-none items-center justify-center h-12 overflow-hidden border border-gray-700 rounded-lg">
-                        <img class="w-11 h-11" src="/assets/img/players/brown.png">
-                        <input class="w-24 p-2 bg-gray-700 rounded-lg" placeholder="Brown" style="outline: none;">
-                    </li>
-                    <li
-                        class="flex flex-row select-none items-center justify-center h-12 overflow-hidden border border-gray-700 rounded-lg">
-                        <img class="w-11 h-11" src="/assets/img/players/cyan.png">
-                        <input class="w-24 p-2 bg-gray-700 rounded-lg" placeholder="Cyan" style="outline: none;">
-                    </li>
-                    <li
-                        class="flex flex-row select-none items-center justify-center h-12 overflow-hidden border border-gray-700 rounded-lg">
-                        <img class="w-11 h-11" src="/assets/img/players/lime.png">
-                        <input class="w-24 p-2 bg-gray-700 rounded-lg" placeholder="Lime" style="outline: none;">
-                    </li>
-                </div>
-            </div>
-            <div
-                class="flex flex-row items-center justify-center h-16 col-span-2 p-2 border-2 border-gray-500 rounded-md">
-                <button class="bg-gray-700 px-5 py-2 rounded-lg focus:border-4 focus:border-gray-100"
-                    onclick="window.location.href = '/';" style="outline: none;">Reset Sus-O-Meter</button>
-                <button class="bg-gray-700 px-5 py-2 rounded-lg ml-5 focus:border-4 focus:border-gray-100"
-                    onclick="clearNotes()" style="outline: none;">Clear Notes</button>
-            </div>
-            <div
-                class="flex flex-row items-center justify-center h-16 col-span-2 p-2 border-2 border-gray-500 rounded-md">
-                <a class="text-sm" href="https://izmichael.xyz">&copy; IzMichael 2020</a>
-                <p class="select-none">&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;</p>
-                <a class="text-sm" href="https://twitter.com/SamuraiPipotchi">Map by @SamuraiPipotchi</a>
-                <p class="select-none">&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;</p>
-                <a class="text-sm" href="https://github.com/IzMichael/Among-Us-Tracker/issues/new">Problems?</a>
-                <p class="select-none">&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;</p>
-                <a class="text-sm" href="/help">HOW TO USE</a>
-            </div>
+    <div class="flex flex-col w-screen h-screen justify-center items-center px-64 overflow-hidden">
+        <div class="grid grid-cols-1 lg:grid-cols-2 p-5 border-2 border-gray-500 rounded-md gap-4 w-full">
+            <h1 class="text-3xl px-20 text-center font-bold col-span-2">Among Us Tracker</h1>
+            <p class="text-xl col-span-2">Among Us Tracker is a complex, yet easy to use application designed to assist
+                you in your Among Us games</p>
+            <h4 class="text-2xl font-bold col-span-2 text-center">What are you playing as?</h4>
+            <a href="/crewmate/" id="toCrew" class="text-xl px-10 py-2 text-center hover:text-blue-400">Crewmate</a>
+            <a href="/impostor/" id="toImp" class="text-xl px-10 py-2 text-center hover:text-red-400">Impostor</a>
         </div>
-        <div class="flex flex-col justify-center w-full h-full p-5" id="mapDisplay">
-            <div class="parent">
-                <!-- Skeld Images -->
-                <div class="w-full h-full mapImg1 skeld"><img src="/assets/img/maps/skeld/blank.png"></div>
-                <div class="w-full h-full mapImg2 skeld skeld-vent"><img src="/assets/img/maps/skeld/vents.png"></div>
-                <div class="w-full h-full mapImg3 skeld skeld-label"><img src="/assets/img/maps/skeld/label.png"></div>
-                <div class="w-full h-full mapImg4 skeld skeld-common"><img src="/assets/img/maps/skeld/common.png">
-                </div>
-                <div class="w-full h-full mapImg5 skeld skeld-cams"><img src="/assets/img/maps/skeld/cams.png"></div>
-                <!-- Mira Images -->
-                <div class="w-full h-full mapImg1 mira"><img src="/assets/img/maps/mira/blank.png"></div>
-                <div class="w-full h-full mapImg2 mira mira-vent"><img src="/assets/img/maps/mira/vents.png"></div>
-                <div class="w-full h-full mapImg3 mira mira-label"><img src="/assets/img/maps/mira/label.png"></div>
-                <div class="w-full h-full mapImg4 mira mira-common"><img src="/assets/img/maps/mira/common.png"></div>
-                <div class="w-full h-full mapImg5 mira mira-cams"><img src="/assets/img/maps/mira/cams.png"></div>
-                <!-- Polus Images -->
-                <div class="w-full h-full mapImg1 polus"><img src="/assets/img/maps/polus/blank.png"></div>
-                <div class="w-full h-full mapImg2 polus polus-vent"><img src="/assets/img/maps/polus/vents.png"></div>
-                <div class="w-full h-full mapImg3 polus polus-label"><img src="/assets/img/maps/polus/label.png"></div>
-                <div class="w-full h-full mapImg4 polus polus-common"><img src="/assets/img/maps/polus/common.png">
-                </div>
-                <div class="w-full h-full mapImg5 polus polus-cams"><img src="/assets/img/maps/polus/cams.png"></div>
-            </div>
-        </div>
-        <div class="flex flex-col w-full h-full p-5" id="mapControl">
-            <div class="flex flex-row w-full mb-4 border-b-2 border-gray-500">
-                <div class="flex flex-col flex-1">
-                    <h1 class="text-xl font-bold" id="mapLabel">Current: The Skeld</h1>
-                    <a href="/" class="p-2 hover:bg-gray-600" onclick="mapSelect('skeld');return false">The Skeld</a>
-                    <a href="/" class="p-2 hover:bg-gray-600" onclick="mapSelect('mira');return false">Mira HQ</a>
-                    <a href="/" class="p-2 hover:bg-gray-600" onclick="mapSelect('polus');return false">Polus</a>
-                </div>
-                <div class="flex flex-col flex-1">
-                    <div class="flex flex-row items-center justify-end gap-2 p-2">Vents<input type="checkbox"
-                            id="ventBox" checked></div>
-                    <div class="flex flex-row items-center justify-end gap-2 p-2">Common Tasks<input type="checkbox"
-                            id="commonBox" checked></div>
-                    <div class="flex flex-row items-center justify-end gap-2 p-2">
-                        <p id="camsLabel">Cameras</p><input type="checkbox" id="camsBox" checked>
-                    </div>
-                    <div class="flex flex-row items-center justify-end gap-2 p-2">Guide<input type="checkbox"
-                            id="labelBox" checked></div>
-                </div>
-            </div>
-            <h1 class="text-lg">Notes:</h1>
-            <textarea class="flex-1 p-2 mt-1 bg-gray-700 resize-none" style="outline: none;" id="notes"></textarea>
+        <div class="flex flex-row items-center justify-center col-span-2 p-5 border-2 border-gray-500 rounded-md w-full mt-4 text-xl"
+        class="text-sm"
+        class="text-sm">
+            <a href="https://izmichael.xyz">&copy; IzMichael 2020</a>
+            <p class="select-none">&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;</p>
+            <a href="https://twitter.com/SamuraiPipotchi">Maps by @SamuraiPipotchi</a>
+            <p class="select-none">&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;</p>
+            <a href="https://github.com/IzMichael/Among-Us-Tracker/issues/new">Problems?</a>
         </div>
     </div>
-    <script src="/assets/js/main.js"></script>
 </body>
